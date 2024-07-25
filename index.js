@@ -1,17 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  try {
-    localStorage.setItem("test", "This is a test");
-    const testValue = localStorage.getItem("test");
-    document.getElementById(
-      "result"
-    ).textContent = `LocalStorage is working: ${testValue}`;
-    localStorage.removeItem("test");
-  } catch (e) {
-    document.getElementById("result").textContent =
-      "LocalStorage is not working";
-  }
-
-  // Your function here
   console.log("DOM fully loaded and parsed");
   let i = 0;
   let j = 0;
