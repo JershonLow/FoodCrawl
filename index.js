@@ -3,14 +3,14 @@ function squareClickHandler(coordinate) {
 
   console.log("Coordinate String: " + coordinateStr);
 
-  let square = localStorage.getItem(coordinateStr);
+  let square = sessionStorage.getItem(coordinateStr);
 
   if (square === null) {
     square = {
       coords: coordinateStr,
       isChecked: true,
     };
-    localStorage.setItem(coordinateStr, JSON.stringify(square));
+    sessionStorage.setItem(coordinateStr, JSON.stringify(square));
   } else {
     square = JSON.parse(square);
 
@@ -22,8 +22,8 @@ function squareClickHandler(coordinate) {
 
     console.log(square);
 
-    localStorage.removeItem(coordinateStr);
-    localStorage.setItem(coordinateStr, JSON.stringify(square));
+    sessionStorage.removeItem(coordinateStr);
+    sessionStorage.setItem(coordinateStr, JSON.stringify(square));
   }
 
   let element = document.getElementById(coordinateStr);

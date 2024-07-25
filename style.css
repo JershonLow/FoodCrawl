@@ -23,7 +23,7 @@ h1 {
    font-size: 15vw;
    font-family: TitleFont;
    color: white;
-   text-shadow:1vw 1vw rgba(0, 0, 0, 0.75);
+   text-shadow:1vw 1vw 1px rgba(0, 0, 0, 0.75);
    transform: scaleY(1.15);
 }
 
