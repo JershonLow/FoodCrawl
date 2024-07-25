@@ -1,16 +1,55 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Your function here
+  console.log("DOM fully loaded and parsed");
+  let i = 0;
+  let j = 0;
+  let square = {
+    coords: 99,
+    isChecked: true,
+  };
+  let coordinateStr = 10;
+
+  for (j = 0; j < 5; j++) {
+    for (i = 0; i < 5; i++) {
+      coordinateStr += 1;
+      console.log(i + ", " + j);
+      console.log(coordinateStr);
+
+      square = JSON.parse(localStorage.getItem(coordinateStr));
+
+      console.log(square);
+
+      if (square === null) {
+        square = {
+          coords: coordinateStr,
+          isChecked: false,
+        };
+
+        localStorage.setItem(coordinateStr, JSON.stringify(square));
+      } else {
+        checkColour(coordinateStr, square);
+      }
+    }
+    coordinateStr += 5;
+  }
+});
+
 function squareClickHandler(coordinate) {
   const coordinateStr = coordinate.toString();
 
-  console.log("Coordinate String: " + coordinateStr);
+  let square = {
+    coords: 99,
+    isChecked: true,
+  };
 
-  let square = sessionStorage.getItem(coordinateStr);
+  square = localStorage.getItem(coordinateStr);
 
   if (square === null) {
     square = {
       coords: coordinateStr,
       isChecked: true,
     };
-    sessionStorage.setItem(coordinateStr, JSON.stringify(square));
+    localStorage.setItem(coordinateStr, JSON.stringify(square));
   } else {
     square = JSON.parse(square);
 
@@ -22,10 +61,16 @@ function squareClickHandler(coordinate) {
 
     console.log(square);
 
-    sessionStorage.removeItem(coordinateStr);
-    sessionStorage.setItem(coordinateStr, JSON.stringify(square));
+    localStorage.removeItem(coordinateStr);
+    localStorage.setItem(coordinateStr, JSON.stringify(square));
   }
 
+  checkColour(coordinateStr, square);
+
+  console.log(localStorage);
+}
+
+function checkColour(coordinateStr, square) {
   let element = document.getElementById(coordinateStr);
 
   if (square.isChecked == true) {
@@ -35,6 +80,4 @@ function squareClickHandler(coordinate) {
     element.style.backgroundColor = "#fafeff";
     element.style.boxShadow = "2.5px 2.5px 5px rgba(0, 0, 0, 0.589)";
   }
-
-  console.log(localStorage);
 }
