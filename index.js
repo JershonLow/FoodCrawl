@@ -29,9 +29,9 @@ function squareClickHandler(coordinate) {
   let element = document.getElementById(coordinateStr);
 
   if (square.isChecked == true) {
-    element.style.backgroundColor = "green";
+    element.style.backgroundColor = "#7693A6";
   } else {
-    element.style.backgroundColor = "red";
+    element.style.backgroundColor = "#C1D4D9";
   }
 
   console.log(localStorage);
