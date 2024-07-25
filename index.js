@@ -1,19 +1,18 @@
 function squareClickHandler(coordinate) {
-  let coordinateStr = coordinate.toString();
+  const coordinateStr = coordinate.toString();
 
   console.log("Coordinate String: " + coordinateStr);
 
-  let checkSquare = localStorage.getItem(coordinateStr);
+  let square = localStorage.getItem(coordinateStr);
 
-  if (checkSquare === null) {
-    let square = {
+  if (square === null) {
+    square = {
       coords: coordinateStr,
       isChecked: true,
     };
-
     localStorage.setItem(coordinateStr, JSON.stringify(square));
   } else {
-    let square = JSON.parse(checkSquare);
+    square = JSON.parse(square);
 
     if (square.isChecked === false) {
       square.isChecked = true;
@@ -25,6 +24,14 @@ function squareClickHandler(coordinate) {
 
     localStorage.removeItem(coordinateStr);
     localStorage.setItem(coordinateStr, JSON.stringify(square));
+  }
+
+  let element = document.getElementById(coordinateStr);
+
+  if (square.isChecked == true) {
+    element.style.backgroundColor = "green";
+  } else {
+    element.style.backgroundColor = "red";
   }
 
   console.log(localStorage);
