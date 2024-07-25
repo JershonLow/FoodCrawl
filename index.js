@@ -30,8 +30,10 @@ function squareClickHandler(coordinate) {
 
   if (square.isChecked == true) {
     element.style.backgroundColor = "#7693A6";
+    element.style.boxShadow = "0px 0px 5px rgba(137, 237, 226, 0.25)";
   } else {
-    element.style.backgroundColor = "#C1D4D9";
+    element.style.backgroundColor = "#fafeff";
+    element.style.boxShadow = "2.5px 2.5px 5px rgba(0, 0, 0, 0.589)";
   }
 
   console.log(localStorage);
