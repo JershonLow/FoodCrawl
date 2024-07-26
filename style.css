@@ -50,6 +50,7 @@ h1 {
    height: 100%;
    background-color: #fafeff;
    display: flex;
+   flex-direction:column;
    justify-content: center;
    align-items: center;
    text-align: center;
@@ -59,5 +60,8 @@ h1 {
    font-family: ParaFont;
    padding-left: 1px;
    padding-right: 1px;
+}
 
+.column p {
+   margin: 0px;
 }
