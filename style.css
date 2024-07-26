@@ -231,6 +231,7 @@ h3 {
 /* Close button */
 .close {
     position: absolute;
+    z-index: 100;
     top: 15px;
     right: 35px;
     color: #fff;
