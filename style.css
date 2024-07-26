@@ -275,3 +275,12 @@ h3 {
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+.helper {
+   width: 100%;
+   text-align: center;
+   color: #000000a9;
+   font-size: small;
+   margin: 0px;
+   text-shadow: 0px 0px 50px black;
+}
