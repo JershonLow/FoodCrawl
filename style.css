@@ -52,6 +52,7 @@ h1 {
 .column {
    width: 100%;
    height: 100%;
+   color: #2E2E2E;
    background-color: #fafeff;
    display: flex;
    flex-direction:column;
@@ -64,6 +65,7 @@ h1 {
    font-family: ParaFont;
    padding-left: 1px;
    padding-right: 1px;
+   transition: all 0.25s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .column p {
@@ -177,4 +179,98 @@ h3 {
 
 .card:hover::after {
   transform: translateX(100%);
+}
+
+
+
+
+
+
+
+/* The popup (background) */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* The carousel container */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 95%;
+}
+
+/* The popup content (image) */
+.carousel-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of popup image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
