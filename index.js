@@ -73,8 +73,8 @@ function checkColour(coordinateStr, square) {
   let element = document.getElementById(coordinateStr);
 
   if (square.isChecked == true) {
-    element.style.backgroundColor = "#CFE4EF";
-    element.style.boxShadow = "0px 0px 5px rgba(137, 237, 226, 0.25)";
+    element.style.backgroundColor = "#4fe343";
+    element.style.boxShadow = "0px 0px 5px rgba(137, 237, 159, 0.25)";
   } else {
     element.style.backgroundColor = "#fafeff";
     element.style.boxShadow = "2.5px 2.5px 5px rgba(0, 0, 0, 0.589)";
