@@ -1,0 +1,259 @@
+@font-face {
+    font-family: TitleFont;
+    src: url(./Assets/Fonts/ROMALIKA.otf);
+}
+
+@font-face {
+    font-family: ParaFont;
+    src: url(./Assets/Fonts/Nexa-Heavy.ttf);
+}
+
+@font-face {
+    font-family: College;
+    src: url(./Assets/Fonts/College\ Boy.otf);
+}
+
+@font-face {
+    font-family: Lilita;
+    src: url(./Assets/Fonts/LilitaOne-Regular.ttf);
+}
+
+h1 {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 15vw;
+    font-family: Lilita;
+    color: white;
+    text-shadow: 1vw 1vw 1px rgba(0, 0, 0, 0.75), 0vw 0vw 10vw rgba(0, 0, 0, 0.75);
+    transform: scaleY(1.15);
+}
+
+.container {
+    width: 95vw;
+    margin: 0px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./Assets/Images/slice.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.table {
+    margin: 5vw;
+    gap: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    height: 19vw;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.column {
+    width: 100%;
+    height: 100%;
+    color: #2E2E2E;
+    background-color: #fafeff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2vw;
+    box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.589);
+    font-size: 2vw;
+    font-family: ParaFont;
+    padding-left: 1px;
+    padding-right: 1px;
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.column p {
+    margin: 0px;
+}
+
+
+h2 {
+    font-family: ParaFont;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+    transform: scaleX(0.7);
+    color: white;
+    text-shadow: 0px 0px 10vw black;
+    margin: 0px;
+}
+
+h3 {
+    font-family: ParaFont;
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+    transform: scaleX(0.7);
+    color: white;
+    text-shadow: 0px 0px 10vw black;
+}
+
+/* The popup (background) */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* The carousel container */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 95%;
+}
+
+/* The popup content (image) */
+.carousel-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+
+
+/* Caption of popup image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    z-index: 100;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.helper {
+    width: 80%;
+    text-align: center;
+    color: #000000a9;
+    font-size: 2vw;
+    font-weight: 600;
+    margin: 0px;
+    text-shadow: 0px 0px 50px black;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 300px;
+    height: 100%;
+    background-color: #4158D0;
+    background-image: linear-gradient(15deg, rgba(118, 142, 146, 1) 0%, rgba(180, 182, 183, 1) 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0px 0px 10px black;
+}
+
+.card-content .card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: inherit;
+    text-transform: uppercase;
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
+}
+
+.card-content .card-para {
+    color: inherit;
+    opacity: 0.8;
+    font-size: 14px;
+    margin-top: 0.5vh;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
